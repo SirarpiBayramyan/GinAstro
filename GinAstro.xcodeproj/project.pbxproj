@@ -1,0 +1,705 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8D4B873B2D60B38A00367AA6 /* GinAstroApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B873A2D60B38A00367AA6 /* GinAstroApp.swift */; };
+		8D4B873F2D60B38A00367AA6 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B873E2D60B38A00367AA6 /* Item.swift */; };
+		8D4B87412D60B38B00367AA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D4B87402D60B38B00367AA6 /* Assets.xcassets */; };
+		8D4B87442D60B38B00367AA6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D4B87432D60B38B00367AA6 /* Preview Assets.xcassets */; };
+		8D4B874E2D60B38B00367AA6 /* GinAstroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B874D2D60B38B00367AA6 /* GinAstroTests.swift */; };
+		8D4B87B62D648B7800367AA6 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87B22D648B7800367AA6 /* FirebaseAuthService.swift */; };
+		8D4B87B72D648B7800367AA6 /* OpenAITranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87B32D648B7800367AA6 /* OpenAITranslationService.swift */; };
+		8D4B87B82D648B7800367AA6 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87B42D648B7800367AA6 /* UserDefaults.swift */; };
+		8D4B87BB2D648BD500367AA6 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87B92D648BD500367AA6 /* MainMenuView.swift */; };
+		8D4B87BF2D648BF200367AA6 /* HoroscopeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87BC2D648BF200367AA6 /* HoroscopeView.swift */; };
+		8D4B87C02D648BF200367AA6 /* HoroscopeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87BD2D648BF200367AA6 /* HoroscopeViewModel.swift */; };
+		8D4B87C22D648C4300367AA6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D4B87C12D648C4300367AA6 /* GoogleService-Info.plist */; };
+		8D4B87C42D648CAB00367AA6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87C32D648CAB00367AA6 /* User.swift */; };
+		8D4B87C72D648CE200367AA6 /* ZodiacSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87C62D648CE200367AA6 /* ZodiacSign.swift */; };
+		8D4B87C92D648D1F00367AA6 /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87C82D648D1F00367AA6 /* AuthState.swift */; };
+		8D4B87CB2D648D8200367AA6 /* AuthIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87CA2D648D8200367AA6 /* AuthIntent.swift */; };
+		8D4B87CF2D648E2500367AA6 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87CE2D648E2500367AA6 /* AuthModel.swift */; };
+		8D4B87D12D648EAB00367AA6 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87D02D648EAB00367AA6 /* AuthView.swift */; };
+		8D4B87D42D648F5400367AA6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8D4B87D32D648F5400367AA6 /* FirebaseAuth */; };
+		8D4B87D62D648F5800367AA6 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8D4B87D52D648F5800367AA6 /* FirebaseCore */; };
+		8D4B87D82D648F6100367AA6 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 8D4B87D72D648F6100367AA6 /* FirebaseDatabase */; };
+		8D4B87DA2D648F7E00367AA6 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8D4B87D92D648F7E00367AA6 /* FirebaseFirestore */; };
+		8D4B87E02D64A5A900367AA6 /* TarotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87DF2D64A5A900367AA6 /* TarotView.swift */; };
+		8D4B87E32D64A5F100367AA6 /* LiveChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87E22D64A5F100367AA6 /* LiveChatView.swift */; };
+		8D4B87E52D64A84900367AA6 /* OpenAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8D4B87E42D64A84900367AA6 /* OpenAIKit */; };
+		8D4B87E72D64A89C00367AA6 /* HoroscopeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87E62D64A89C00367AA6 /* HoroscopeModel.swift */; };
+		8D4B87EA2D64AECC00367AA6 /* HoroscopeIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87E92D64AECC00367AA6 /* HoroscopeIntentHandler.swift */; };
+		8D4B87ED2D64B04F00367AA6 /* BackButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87EB2D64B04F00367AA6 /* BackButtonModifier.swift */; };
+		8D4B87EF2D64C4F800367AA6 /* CustomBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87EE2D64C4F700367AA6 /* CustomBackground.swift */; };
+		8D4B87F12D64C6E700367AA6 /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87F02D64C6E700367AA6 /* MenuItemView.swift */; };
+		8D4B87F32D64D1D500367AA6 /* DreamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87F22D64D1D500367AA6 /* DreamViewModel.swift */; };
+		8D4B87F52D64DA0300367AA6 /* DreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87F42D64DA0300367AA6 /* DreamView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8D4B874A2D60B38B00367AA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D4B872F2D60B38A00367AA6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D4B87362D60B38A00367AA6;
+			remoteInfo = GinAstro;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8D4B87372D60B38A00367AA6 /* GinAstro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GinAstro.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D4B873A2D60B38A00367AA6 /* GinAstroApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GinAstroApp.swift; sourceTree = "<group>"; };
+		8D4B873E2D60B38A00367AA6 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		8D4B87402D60B38B00367AA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8D4B87432D60B38B00367AA6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8D4B87492D60B38B00367AA6 /* GinAstroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GinAstroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D4B874D2D60B38B00367AA6 /* GinAstroTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GinAstroTests.swift; sourceTree = "<group>"; };
+		8D4B87B22D648B7800367AA6 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
+		8D4B87B32D648B7800367AA6 /* OpenAITranslationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenAITranslationService.swift; sourceTree = "<group>"; };
+		8D4B87B42D648B7800367AA6 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		8D4B87B92D648BD500367AA6 /* MainMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
+		8D4B87BC2D648BF200367AA6 /* HoroscopeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoroscopeView.swift; sourceTree = "<group>"; };
+		8D4B87BD2D648BF200367AA6 /* HoroscopeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoroscopeViewModel.swift; sourceTree = "<group>"; };
+		8D4B87C12D648C4300367AA6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8D4B87C32D648CAB00367AA6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8D4B87C62D648CE200367AA6 /* ZodiacSign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZodiacSign.swift; sourceTree = "<group>"; };
+		8D4B87C82D648D1F00367AA6 /* AuthState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthState.swift; sourceTree = "<group>"; };
+		8D4B87CA2D648D8200367AA6 /* AuthIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthIntent.swift; sourceTree = "<group>"; };
+		8D4B87CE2D648E2500367AA6 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
+		8D4B87D02D648EAB00367AA6 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		8D4B87DF2D64A5A900367AA6 /* TarotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarotView.swift; sourceTree = "<group>"; };
+		8D4B87E22D64A5F100367AA6 /* LiveChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChatView.swift; sourceTree = "<group>"; };
+		8D4B87E62D64A89C00367AA6 /* HoroscopeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeModel.swift; sourceTree = "<group>"; };
+		8D4B87E82D64AA5200367AA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8D4B87E92D64AECC00367AA6 /* HoroscopeIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeIntentHandler.swift; sourceTree = "<group>"; };
+		8D4B87EB2D64B04F00367AA6 /* BackButtonModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackButtonModifier.swift; sourceTree = "<group>"; };
+		8D4B87EE2D64C4F700367AA6 /* CustomBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackground.swift; sourceTree = "<group>"; };
+		8D4B87F02D64C6E700367AA6 /* MenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
+		8D4B87F22D64D1D500367AA6 /* DreamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamViewModel.swift; sourceTree = "<group>"; };
+		8D4B87F42D64DA0300367AA6 /* DreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D4B87342D60B38A00367AA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D4B87D82D648F6100367AA6 /* FirebaseDatabase in Frameworks */,
+				8D4B87DA2D648F7E00367AA6 /* FirebaseFirestore in Frameworks */,
+				8D4B87E52D64A84900367AA6 /* OpenAIKit in Frameworks */,
+				8D4B87D62D648F5800367AA6 /* FirebaseCore in Frameworks */,
+				8D4B87D42D648F5400367AA6 /* FirebaseAuth in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D4B87462D60B38B00367AA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8D4B872E2D60B38A00367AA6 = {
+			isa = PBXGroup;
+			children = (
+				8D4B87392D60B38A00367AA6 /* GinAstro */,
+				8D4B874C2D60B38B00367AA6 /* GinAstroTests */,
+				8D4B87382D60B38A00367AA6 /* Products */,
+				8D4B87D22D648F5400367AA6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8D4B87382D60B38A00367AA6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D4B87372D60B38A00367AA6 /* GinAstro.app */,
+				8D4B87492D60B38B00367AA6 /* GinAstroTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8D4B87392D60B38A00367AA6 /* GinAstro */ = {
+			isa = PBXGroup;
+			children = (
+				8D4B87E82D64AA5200367AA6 /* Info.plist */,
+				8D4B87E12D64A5E300367AA6 /* LIveChat */,
+				8D4B87DB2D64A52400367AA6 /* DreamCatcher */,
+				8D4B87BE2D648BF200367AA6 /* Horoscope */,
+				8D4B87BA2D648BD500367AA6 /* Main */,
+				8D4B87B52D648B7800367AA6 /* Services */,
+				8D4B873A2D60B38A00367AA6 /* GinAstroApp.swift */,
+				8D4B87C52D648CCF00367AA6 /* Authentification */,
+				8D4B873E2D60B38A00367AA6 /* Item.swift */,
+				8D4B87C62D648CE200367AA6 /* ZodiacSign.swift */,
+				8D4B87DE2D64A5A000367AA6 /* TarotV */,
+				8D4B87C32D648CAB00367AA6 /* User.swift */,
+				8D4B87EC2D64B04F00367AA6 /* UI */,
+				8D4B87C12D648C4300367AA6 /* GoogleService-Info.plist */,
+				8D4B87402D60B38B00367AA6 /* Assets.xcassets */,
+				8D4B87422D60B38B00367AA6 /* Preview Content */,
+			);
+			path = GinAstro;
+			sourceTree = "<group>";
+		};
+		8D4B87422D60B38B00367AA6 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8D4B87432D60B38B00367AA6 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8D4B874C2D60B38B00367AA6 /* GinAstroTests */ = {
+			isa = PBXGroup;
+			children = (
+				8D4B874D2D60B38B00367AA6 /* GinAstroTests.swift */,
+			);
+			path = GinAstroTests;
+			sourceTree = "<group>";
+		};
+		8D4B87B52D648B7800367AA6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8D4B87B22D648B7800367AA6 /* FirebaseAuthService.swift */,
+				8D4B87B32D648B7800367AA6 /* OpenAITranslationService.swift */,
+				8D4B87B42D648B7800367AA6 /* UserDefaults.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8D4B87BA2D648BD500367AA6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8D4B87B92D648BD500367AA6 /* MainMenuView.swift */,
+				8D4B87F02D64C6E700367AA6 /* MenuItemView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		8D4B87BE2D648BF200367AA6 /* Horoscope */ = {
+			isa = PBXGroup;
+			children = (
+				8D4B87BC2D648BF200367AA6 /* HoroscopeView.swift */,
+				8D4B87BD2D648BF200367AA6 /* HoroscopeViewModel.swift */,
+				8D4B87E92D64AECC00367AA6 /* HoroscopeIntentHandler.swift */,
+				8D4B87E62D64A89C00367AA6 /* HoroscopeModel.swift */,
+			);
+			path = Horoscope;
+			sourceTree = "<group>";
+		};
+		8D4B87C52D648CCF00367AA6 /* Authentification */ = {
+			isa = PBXGroup;
+			children = (
+				8D4B87C82D648D1F00367AA6 /* AuthState.swift */,
+				8D4B87D02D648EAB00367AA6 /* AuthView.swift */,
+				8D4B87CE2D648E2500367AA6 /* AuthModel.swift */,
+				8D4B87CA2D648D8200367AA6 /* AuthIntent.swift */,
+			);
+			path = Authentification;
+			sourceTree = "<group>";
+		};
+		8D4B87D22D648F5400367AA6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8D4B87DB2D64A52400367AA6 /* DreamCatcher */ = {
+			isa = PBXGroup;
+			children = (
+				8D4B87F22D64D1D500367AA6 /* DreamViewModel.swift */,
+				8D4B87F42D64DA0300367AA6 /* DreamView.swift */,
+			);
+			name = DreamCatcher;
+			path = Services/DreamCatcher;
+			sourceTree = "<group>";
+		};
+		8D4B87DE2D64A5A000367AA6 /* TarotV */ = {
+			isa = PBXGroup;
+			children = (
+				8D4B87DF2D64A5A900367AA6 /* TarotView.swift */,
+			);
+			path = TarotV;
+			sourceTree = "<group>";
+		};
+		8D4B87E12D64A5E300367AA6 /* LIveChat */ = {
+			isa = PBXGroup;
+			children = (
+				8D4B87E22D64A5F100367AA6 /* LiveChatView.swift */,
+			);
+			path = LIveChat;
+			sourceTree = "<group>";
+		};
+		8D4B87EC2D64B04F00367AA6 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				8D4B87EB2D64B04F00367AA6 /* BackButtonModifier.swift */,
+				8D4B87EE2D64C4F700367AA6 /* CustomBackground.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D4B87362D60B38A00367AA6 /* GinAstro */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D4B875D2D60B38B00367AA6 /* Build configuration list for PBXNativeTarget "GinAstro" */;
+			buildPhases = (
+				8D4B87332D60B38A00367AA6 /* Sources */,
+				8D4B87342D60B38A00367AA6 /* Frameworks */,
+				8D4B87352D60B38A00367AA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GinAstro;
+			packageProductDependencies = (
+				8D4B87D32D648F5400367AA6 /* FirebaseAuth */,
+				8D4B87D52D648F5800367AA6 /* FirebaseCore */,
+				8D4B87D72D648F6100367AA6 /* FirebaseDatabase */,
+				8D4B87D92D648F7E00367AA6 /* FirebaseFirestore */,
+				8D4B87E42D64A84900367AA6 /* OpenAIKit */,
+			);
+			productName = GinAstro;
+			productReference = 8D4B87372D60B38A00367AA6 /* GinAstro.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8D4B87482D60B38B00367AA6 /* GinAstroTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D4B87602D60B38B00367AA6 /* Build configuration list for PBXNativeTarget "GinAstroTests" */;
+			buildPhases = (
+				8D4B87452D60B38B00367AA6 /* Sources */,
+				8D4B87462D60B38B00367AA6 /* Frameworks */,
+				8D4B87472D60B38B00367AA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8D4B874B2D60B38B00367AA6 /* PBXTargetDependency */,
+			);
+			name = GinAstroTests;
+			productName = GinAstroTests;
+			productReference = 8D4B87492D60B38B00367AA6 /* GinAstroTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8D4B872F2D60B38A00367AA6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					8D4B87362D60B38A00367AA6 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					8D4B87482D60B38B00367AA6 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 8D4B87362D60B38A00367AA6;
+					};
+				};
+			};
+			buildConfigurationList = 8D4B87322D60B38A00367AA6 /* Build configuration list for PBXProject "GinAstro" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8D4B872E2D60B38A00367AA6;
+			packageReferences = (
+				8D4B87CC2D648DDD00367AA6 /* XCRemoteSwiftPackageReference "OpenAI" */,
+				8D4B87CD2D648E0F00367AA6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			productRefGroup = 8D4B87382D60B38A00367AA6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D4B87362D60B38A00367AA6 /* GinAstro */,
+				8D4B87482D60B38B00367AA6 /* GinAstroTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D4B87352D60B38A00367AA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D4B87442D60B38B00367AA6 /* Preview Assets.xcassets in Resources */,
+				8D4B87412D60B38B00367AA6 /* Assets.xcassets in Resources */,
+				8D4B87C22D648C4300367AA6 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D4B87472D60B38B00367AA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D4B87332D60B38A00367AA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D4B87C72D648CE200367AA6 /* ZodiacSign.swift in Sources */,
+				8D4B87C92D648D1F00367AA6 /* AuthState.swift in Sources */,
+				8D4B87F12D64C6E700367AA6 /* MenuItemView.swift in Sources */,
+				8D4B87F52D64DA0300367AA6 /* DreamView.swift in Sources */,
+				8D4B87E72D64A89C00367AA6 /* HoroscopeModel.swift in Sources */,
+				8D4B87B62D648B7800367AA6 /* FirebaseAuthService.swift in Sources */,
+				8D4B87BB2D648BD500367AA6 /* MainMenuView.swift in Sources */,
+				8D4B87BF2D648BF200367AA6 /* HoroscopeView.swift in Sources */,
+				8D4B87ED2D64B04F00367AA6 /* BackButtonModifier.swift in Sources */,
+				8D4B87CB2D648D8200367AA6 /* AuthIntent.swift in Sources */,
+				8D4B87B82D648B7800367AA6 /* UserDefaults.swift in Sources */,
+				8D4B87E32D64A5F100367AA6 /* LiveChatView.swift in Sources */,
+				8D4B87EA2D64AECC00367AA6 /* HoroscopeIntentHandler.swift in Sources */,
+				8D4B87B72D648B7800367AA6 /* OpenAITranslationService.swift in Sources */,
+				8D4B87CF2D648E2500367AA6 /* AuthModel.swift in Sources */,
+				8D4B87C02D648BF200367AA6 /* HoroscopeViewModel.swift in Sources */,
+				8D4B87F32D64D1D500367AA6 /* DreamViewModel.swift in Sources */,
+				8D4B87D12D648EAB00367AA6 /* AuthView.swift in Sources */,
+				8D4B873F2D60B38A00367AA6 /* Item.swift in Sources */,
+				8D4B87C42D648CAB00367AA6 /* User.swift in Sources */,
+				8D4B873B2D60B38A00367AA6 /* GinAstroApp.swift in Sources */,
+				8D4B87EF2D64C4F800367AA6 /* CustomBackground.swift in Sources */,
+				8D4B87E02D64A5A900367AA6 /* TarotView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D4B87452D60B38B00367AA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D4B874E2D60B38B00367AA6 /* GinAstroTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8D4B874B2D60B38B00367AA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D4B87362D60B38A00367AA6 /* GinAstro */;
+			targetProxy = 8D4B874A2D60B38B00367AA6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		8D4B875B2D60B38B00367AA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8D4B875C2D60B38B00367AA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8D4B875E2D60B38B00367AA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GinAstro/Preview Content\"";
+				DEVELOPMENT_TEAM = 69AH5T36J9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GinAstro/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Sir.GinAstro;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8D4B875F2D60B38B00367AA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GinAstro/Preview Content\"";
+				DEVELOPMENT_TEAM = 69AH5T36J9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GinAstro/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Sir.GinAstro;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8D4B87612D60B38B00367AA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 69AH5T36J9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Sir.GinAstroTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GinAstro.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GinAstro";
+			};
+			name = Debug;
+		};
+		8D4B87622D60B38B00367AA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 69AH5T36J9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Sir.GinAstroTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GinAstro.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GinAstro";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8D4B87322D60B38A00367AA6 /* Build configuration list for PBXProject "GinAstro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D4B875B2D60B38B00367AA6 /* Debug */,
+				8D4B875C2D60B38B00367AA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8D4B875D2D60B38B00367AA6 /* Build configuration list for PBXNativeTarget "GinAstro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D4B875E2D60B38B00367AA6 /* Debug */,
+				8D4B875F2D60B38B00367AA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8D4B87602D60B38B00367AA6 /* Build configuration list for PBXNativeTarget "GinAstroTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D4B87612D60B38B00367AA6 /* Debug */,
+				8D4B87622D60B38B00367AA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8D4B87CC2D648DDD00367AA6 /* XCRemoteSwiftPackageReference "OpenAI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/FuturraGroup/OpenAI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.9.3;
+			};
+		};
+		8D4B87CD2D648E0F00367AA6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8D4B87D32D648F5400367AA6 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8D4B87CD2D648E0F00367AA6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		8D4B87D52D648F5800367AA6 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8D4B87CD2D648E0F00367AA6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		8D4B87D72D648F6100367AA6 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8D4B87CD2D648E0F00367AA6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		8D4B87D92D648F7E00367AA6 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8D4B87CD2D648E0F00367AA6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		8D4B87E42D64A84900367AA6 /* OpenAIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8D4B87CC2D648DDD00367AA6 /* XCRemoteSwiftPackageReference "OpenAI" */;
+			productName = OpenAIKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 8D4B872F2D60B38A00367AA6 /* Project object */;
+}
