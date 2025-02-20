@@ -127,6 +127,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D25E9372D675C2400A6BCEC /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		8D4B872E2D60B38A00367AA6 = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +170,7 @@
 				8D4B87C62D648CE200367AA6 /* ZodiacSign.swift */,
 				8D4B87DE2D64A5A000367AA6 /* TarotV */,
 				8D4B87C32D648CAB00367AA6 /* User.swift */,
+				8D25E9372D675C2400A6BCEC /* Settings */,
 				8D4B87EC2D64B04F00367AA6 /* UI */,
 				8D4B87C12D648C4300367AA6 /* GoogleService-Info.plist */,
 				8D4B87402D60B38B00367AA6 /* Assets.xcassets */,

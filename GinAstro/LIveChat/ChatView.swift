@@ -45,7 +45,6 @@ struct ChatView: View {
                         .foregroundColor(.white)
                         .padding()
                         .background(Circle().fill(Color.blue))
-                        .opacity(0.5)
                 }
             }
             .padding()
@@ -92,7 +91,7 @@ struct ChatView: View {
                     // ✅ Regular Message
                     Text(message.text)
                         .padding()
-                        .background(message.isUser ? Color.blue.opacity(0.3) : Color.gray.opacity(0.3))
+                        .background(message.isUser ? Color.blue.opacity(0.5) : Color.gray.opacity(0.5))
                         .foregroundStyle(Color.white)
                         .cornerRadius(12)
                         .frame(maxWidth: 250, alignment: message.isUser ? .trailing : .leading)

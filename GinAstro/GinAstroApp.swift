@@ -3,7 +3,7 @@
 //  GinAstro
 //
 //  Created by Sirarpi Bayramyan on 15.02.25.
-//
+//#imageLiteral(resourceName: "ga.png")
 
 import SwiftUI
 import Firebase

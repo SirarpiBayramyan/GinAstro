@@ -45,13 +45,13 @@ struct CustomTextField: View {
                     isSecureField.toggle()
                 }) {
                     Image(systemName: isSecureField ? "eye.slash" : "eye")
-                        .foregroundColor(.white.opacity(0.6))
+                        .foregroundColor(.white)
                 }
                 .padding(.trailing, 8)
             }
         }
         .padding(12)
-        .background(Color.white.opacity(0.2))
+        .background(Color.white.opacity(0.4))
         .cornerRadius(10)
         .overlay(
             RoundedRectangle(cornerRadius: 10)

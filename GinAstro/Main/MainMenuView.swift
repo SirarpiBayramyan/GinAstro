@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct MainMenuView: View {
-    
+
     @ObservedObject var authViewModel: AuthViewModel
     init(authViewModel: AuthViewModel) {
         self.authViewModel = authViewModel
     }
-    
+
     var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
@@ -24,20 +24,20 @@ struct MainMenuView: View {
                     .multilineTextAlignment(.center)
                     .padding(.top, 20)
                     .foregroundStyle(Color.white)
-                
+
                 // Menu Grid
                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
-                    
+
                     // Horoscope View
                     NavigationLink(destination: HoroscopeView()) {
                         MenuItemView(icon: authViewModel.currentUser?.zodiacSign()?.signImageName ?? "" , title: "Horoscope")
                     }
-                    
+
                     // Dream Catcher View
                     NavigationLink(destination: DreamView()) {
                         MenuItemView(icon: "dreamcatcher", title: "Dream Catcher")
                     }
-                    
+
                     // Tarot View
                     NavigationLink(destination: TarotView()) {
                         MenuItemView(icon: "tarot-reading", title: "Tarot Reading")
@@ -56,9 +56,9 @@ struct MainMenuView: View {
                     }
                 }
                 .padding(.horizontal)
-                
+
                 Spacer()
-                
+
                 // Logout Button
                 Button(action: {
                     logout()
@@ -73,13 +73,20 @@ struct MainMenuView: View {
                 .padding(.bottom, 30)
             }
             .custombackground
+//            .toolbar {
+//                ToolbarItem(placement: .topBarTrailing) {
+//                    NavigationLink(destination: EmptyView()) {  // Change `SettingsView()` to your desired destination
+//                        Image(systemName: "gearshape.fill")
+//                            .font(.title2)
+//                            .foregroundColor(.white)
+//                    }
+//                }
+//            }
         }
     }
-    
+
     // Logout Function
     private func logout() {
-        //        UserDefaults.standard.cachedUser = nil
-        //        UserDefaults.standard.removeObject(forKey: "cachedUser")
         authViewModel.logout()
     }
 }
