@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-// Custom ViewModifier to apply a background image
 struct CustomBackground: ViewModifier {
 
     func body(content: Content) -> some View {

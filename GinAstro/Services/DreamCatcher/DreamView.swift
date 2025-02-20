@@ -18,24 +18,24 @@ struct DreamView: View {
         VStack {
             TextField("Describe your dream...", text: $dreamInput)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
+                .foregroundColor(.gray)
                 .padding()
 
             Button("Interpret Dream") {
                 viewModel.fetchDreamInterpretation(dream: dreamInput)
             }
-            .padding()
-            .background(Color.blue)
-            .foregroundColor(.white)
-            .cornerRadius(10)
+            .gaButton
 
-            contentView()
+            contentView
+
+            Spacer()
         }
-        //.padding()
         .custombackground
+        .customBackButton()
     }
 
     @ViewBuilder
-    private func contentView() -> some View {
+    private var contentView: some View {
         switch viewModel.state {
         case .idle:
             Text("Enter a dream to get an interpretation.")
@@ -46,6 +46,7 @@ struct DreamView: View {
             ScrollView {
                 Text(interpretation)
                     .font(.body)
+                    .foregroundStyle(Color.white)
                     .multilineTextAlignment(.center)
                     .padding()
             }

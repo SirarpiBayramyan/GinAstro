@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "the-moon.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

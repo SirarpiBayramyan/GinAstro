@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D25E9342D6700AE00A6BCEC /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D25E9332D6700AE00A6BCEC /* CustomTextField.swift */; };
+		8D25E9362D670C2000A6BCEC /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D25E9352D670C2000A6BCEC /* ChatViewModel.swift */; };
 		8D4B873B2D60B38A00367AA6 /* GinAstroApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B873A2D60B38A00367AA6 /* GinAstroApp.swift */; };
 		8D4B873F2D60B38A00367AA6 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B873E2D60B38A00367AA6 /* Item.swift */; };
 		8D4B87412D60B38B00367AA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D4B87402D60B38B00367AA6 /* Assets.xcassets */; };
@@ -21,7 +23,6 @@
 		8D4B87C22D648C4300367AA6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D4B87C12D648C4300367AA6 /* GoogleService-Info.plist */; };
 		8D4B87C42D648CAB00367AA6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87C32D648CAB00367AA6 /* User.swift */; };
 		8D4B87C72D648CE200367AA6 /* ZodiacSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87C62D648CE200367AA6 /* ZodiacSign.swift */; };
-		8D4B87C92D648D1F00367AA6 /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87C82D648D1F00367AA6 /* AuthState.swift */; };
 		8D4B87CB2D648D8200367AA6 /* AuthIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87CA2D648D8200367AA6 /* AuthIntent.swift */; };
 		8D4B87CF2D648E2500367AA6 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87CE2D648E2500367AA6 /* AuthModel.swift */; };
 		8D4B87D12D648EAB00367AA6 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87D02D648EAB00367AA6 /* AuthView.swift */; };
@@ -30,7 +31,7 @@
 		8D4B87D82D648F6100367AA6 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 8D4B87D72D648F6100367AA6 /* FirebaseDatabase */; };
 		8D4B87DA2D648F7E00367AA6 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8D4B87D92D648F7E00367AA6 /* FirebaseFirestore */; };
 		8D4B87E02D64A5A900367AA6 /* TarotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87DF2D64A5A900367AA6 /* TarotView.swift */; };
-		8D4B87E32D64A5F100367AA6 /* LiveChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87E22D64A5F100367AA6 /* LiveChatView.swift */; };
+		8D4B87E32D64A5F100367AA6 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87E22D64A5F100367AA6 /* ChatView.swift */; };
 		8D4B87E52D64A84900367AA6 /* OpenAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8D4B87E42D64A84900367AA6 /* OpenAIKit */; };
 		8D4B87E72D64A89C00367AA6 /* HoroscopeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87E62D64A89C00367AA6 /* HoroscopeModel.swift */; };
 		8D4B87EA2D64AECC00367AA6 /* HoroscopeIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87E92D64AECC00367AA6 /* HoroscopeIntentHandler.swift */; };
@@ -39,6 +40,15 @@
 		8D4B87F12D64C6E700367AA6 /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87F02D64C6E700367AA6 /* MenuItemView.swift */; };
 		8D4B87F32D64D1D500367AA6 /* DreamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87F22D64D1D500367AA6 /* DreamViewModel.swift */; };
 		8D4B87F52D64DA0300367AA6 /* DreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87F42D64DA0300367AA6 /* DreamView.swift */; };
+		8D4B87F72D64F9FC00367AA6 /* GAButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87F62D64F9FC00367AA6 /* GAButtonStyle.swift */; };
+		8D4B87F92D65A7F400367AA6 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87F82D65A7F400367AA6 /* CardView.swift */; };
+		8D4B87FB2D65DC9000367AA6 /* TarotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87FA2D65DC9000367AA6 /* TarotViewModel.swift */; };
+		8D4B87FE2D65FE6900367AA6 /* NumerologyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87FD2D65FE6900367AA6 /* NumerologyView.swift */; };
+		8D4B88002D6607D400367AA6 /* NumerologyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B87FF2D6607D400367AA6 /* NumerologyViewModel.swift */; };
+		8D4B88022D66084200367AA6 /* NumerologyCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B88012D66084200367AA6 /* NumerologyCalculator.swift */; };
+		8D4B88052D66106A00367AA6 /* Date+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B88042D66106A00367AA6 /* Date+extension.swift */; };
+		8D4B88072D66562600367AA6 /* NumerologyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B88062D66562600367AA6 /* NumerologyCard.swift */; };
+		8D4B88092D66572800367AA6 /* ExpandableDateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B88082D66572800367AA6 /* ExpandableDateCalculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +62,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8D25E9332D6700AE00A6BCEC /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		8D25E9352D670C2000A6BCEC /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		8D4B87372D60B38A00367AA6 /* GinAstro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GinAstro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D4B873A2D60B38A00367AA6 /* GinAstroApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GinAstroApp.swift; sourceTree = "<group>"; };
 		8D4B873E2D60B38A00367AA6 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -68,12 +80,11 @@
 		8D4B87C12D648C4300367AA6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8D4B87C32D648CAB00367AA6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8D4B87C62D648CE200367AA6 /* ZodiacSign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZodiacSign.swift; sourceTree = "<group>"; };
-		8D4B87C82D648D1F00367AA6 /* AuthState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthState.swift; sourceTree = "<group>"; };
 		8D4B87CA2D648D8200367AA6 /* AuthIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthIntent.swift; sourceTree = "<group>"; };
 		8D4B87CE2D648E2500367AA6 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
 		8D4B87D02D648EAB00367AA6 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		8D4B87DF2D64A5A900367AA6 /* TarotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarotView.swift; sourceTree = "<group>"; };
-		8D4B87E22D64A5F100367AA6 /* LiveChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChatView.swift; sourceTree = "<group>"; };
+		8D4B87E22D64A5F100367AA6 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		8D4B87E62D64A89C00367AA6 /* HoroscopeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeModel.swift; sourceTree = "<group>"; };
 		8D4B87E82D64AA5200367AA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D4B87E92D64AECC00367AA6 /* HoroscopeIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeIntentHandler.swift; sourceTree = "<group>"; };
@@ -82,6 +93,15 @@
 		8D4B87F02D64C6E700367AA6 /* MenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
 		8D4B87F22D64D1D500367AA6 /* DreamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamViewModel.swift; sourceTree = "<group>"; };
 		8D4B87F42D64DA0300367AA6 /* DreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamView.swift; sourceTree = "<group>"; };
+		8D4B87F62D64F9FC00367AA6 /* GAButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAButtonStyle.swift; sourceTree = "<group>"; };
+		8D4B87F82D65A7F400367AA6 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		8D4B87FA2D65DC9000367AA6 /* TarotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarotViewModel.swift; sourceTree = "<group>"; };
+		8D4B87FD2D65FE6900367AA6 /* NumerologyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumerologyView.swift; sourceTree = "<group>"; };
+		8D4B87FF2D6607D400367AA6 /* NumerologyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumerologyViewModel.swift; sourceTree = "<group>"; };
+		8D4B88012D66084200367AA6 /* NumerologyCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumerologyCalculator.swift; sourceTree = "<group>"; };
+		8D4B88042D66106A00367AA6 /* Date+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+extension.swift"; sourceTree = "<group>"; };
+		8D4B88062D66562600367AA6 /* NumerologyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumerologyCard.swift; sourceTree = "<group>"; };
+		8D4B88082D66572800367AA6 /* ExpandableDateCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableDateCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				8D4B87E82D64AA5200367AA6 /* Info.plist */,
+				8D4B88032D66104E00367AA6 /* Extensions */,
+				8D4B87FC2D65FE5600367AA6 /* Numerology */,
 				8D4B87E12D64A5E300367AA6 /* LIveChat */,
 				8D4B87DB2D64A52400367AA6 /* DreamCatcher */,
 				8D4B87BE2D648BF200367AA6 /* Horoscope */,
@@ -198,7 +220,6 @@
 		8D4B87C52D648CCF00367AA6 /* Authentification */ = {
 			isa = PBXGroup;
 			children = (
-				8D4B87C82D648D1F00367AA6 /* AuthState.swift */,
 				8D4B87D02D648EAB00367AA6 /* AuthView.swift */,
 				8D4B87CE2D648E2500367AA6 /* AuthModel.swift */,
 				8D4B87CA2D648D8200367AA6 /* AuthIntent.swift */,
@@ -226,7 +247,9 @@
 		8D4B87DE2D64A5A000367AA6 /* TarotV */ = {
 			isa = PBXGroup;
 			children = (
+				8D4B87F82D65A7F400367AA6 /* CardView.swift */,
 				8D4B87DF2D64A5A900367AA6 /* TarotView.swift */,
+				8D4B87FA2D65DC9000367AA6 /* TarotViewModel.swift */,
 			);
 			path = TarotV;
 			sourceTree = "<group>";
@@ -234,7 +257,8 @@
 		8D4B87E12D64A5E300367AA6 /* LIveChat */ = {
 			isa = PBXGroup;
 			children = (
-				8D4B87E22D64A5F100367AA6 /* LiveChatView.swift */,
+				8D4B87E22D64A5F100367AA6 /* ChatView.swift */,
+				8D25E9352D670C2000A6BCEC /* ChatViewModel.swift */,
 			);
 			path = LIveChat;
 			sourceTree = "<group>";
@@ -243,9 +267,31 @@
 			isa = PBXGroup;
 			children = (
 				8D4B87EB2D64B04F00367AA6 /* BackButtonModifier.swift */,
+				8D4B87F62D64F9FC00367AA6 /* GAButtonStyle.swift */,
+				8D25E9332D6700AE00A6BCEC /* CustomTextField.swift */,
 				8D4B87EE2D64C4F700367AA6 /* CustomBackground.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		8D4B87FC2D65FE5600367AA6 /* Numerology */ = {
+			isa = PBXGroup;
+			children = (
+				8D4B87FD2D65FE6900367AA6 /* NumerologyView.swift */,
+				8D4B88062D66562600367AA6 /* NumerologyCard.swift */,
+				8D4B88082D66572800367AA6 /* ExpandableDateCalculator.swift */,
+				8D4B88012D66084200367AA6 /* NumerologyCalculator.swift */,
+				8D4B87FF2D6607D400367AA6 /* NumerologyViewModel.swift */,
+			);
+			path = Numerology;
+			sourceTree = "<group>";
+		};
+		8D4B88032D66104E00367AA6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8D4B88042D66106A00367AA6 /* Date+extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,27 +407,37 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D4B87C72D648CE200367AA6 /* ZodiacSign.swift in Sources */,
-				8D4B87C92D648D1F00367AA6 /* AuthState.swift in Sources */,
 				8D4B87F12D64C6E700367AA6 /* MenuItemView.swift in Sources */,
+				8D4B87F72D64F9FC00367AA6 /* GAButtonStyle.swift in Sources */,
 				8D4B87F52D64DA0300367AA6 /* DreamView.swift in Sources */,
 				8D4B87E72D64A89C00367AA6 /* HoroscopeModel.swift in Sources */,
+				8D4B88072D66562600367AA6 /* NumerologyCard.swift in Sources */,
 				8D4B87B62D648B7800367AA6 /* FirebaseAuthService.swift in Sources */,
+				8D4B88052D66106A00367AA6 /* Date+extension.swift in Sources */,
 				8D4B87BB2D648BD500367AA6 /* MainMenuView.swift in Sources */,
 				8D4B87BF2D648BF200367AA6 /* HoroscopeView.swift in Sources */,
+				8D4B87FB2D65DC9000367AA6 /* TarotViewModel.swift in Sources */,
 				8D4B87ED2D64B04F00367AA6 /* BackButtonModifier.swift in Sources */,
 				8D4B87CB2D648D8200367AA6 /* AuthIntent.swift in Sources */,
 				8D4B87B82D648B7800367AA6 /* UserDefaults.swift in Sources */,
-				8D4B87E32D64A5F100367AA6 /* LiveChatView.swift in Sources */,
+				8D4B87E32D64A5F100367AA6 /* ChatView.swift in Sources */,
 				8D4B87EA2D64AECC00367AA6 /* HoroscopeIntentHandler.swift in Sources */,
+				8D4B87F92D65A7F400367AA6 /* CardView.swift in Sources */,
+				8D4B88022D66084200367AA6 /* NumerologyCalculator.swift in Sources */,
 				8D4B87B72D648B7800367AA6 /* OpenAITranslationService.swift in Sources */,
 				8D4B87CF2D648E2500367AA6 /* AuthModel.swift in Sources */,
+				8D25E9342D6700AE00A6BCEC /* CustomTextField.swift in Sources */,
+				8D4B88092D66572800367AA6 /* ExpandableDateCalculator.swift in Sources */,
 				8D4B87C02D648BF200367AA6 /* HoroscopeViewModel.swift in Sources */,
 				8D4B87F32D64D1D500367AA6 /* DreamViewModel.swift in Sources */,
+				8D4B87FE2D65FE6900367AA6 /* NumerologyView.swift in Sources */,
 				8D4B87D12D648EAB00367AA6 /* AuthView.swift in Sources */,
 				8D4B873F2D60B38A00367AA6 /* Item.swift in Sources */,
 				8D4B87C42D648CAB00367AA6 /* User.swift in Sources */,
 				8D4B873B2D60B38A00367AA6 /* GinAstroApp.swift in Sources */,
+				8D4B88002D6607D400367AA6 /* NumerologyViewModel.swift in Sources */,
 				8D4B87EF2D64C4F800367AA6 /* CustomBackground.swift in Sources */,
+				8D25E9362D670C2000A6BCEC /* ChatViewModel.swift in Sources */,
 				8D4B87E02D64A5A900367AA6 /* TarotView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

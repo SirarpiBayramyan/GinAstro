@@ -148,7 +148,6 @@ struct HoroscopeView: View {
                 }
             }
             .onAppear {
-                // Auto-scroll to the selected zodiac when the view appears
                 scrollProxy.scrollTo(selectedSign, anchor: .center)
             }
         }

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "taro-closed.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

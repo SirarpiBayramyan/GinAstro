@@ -14,6 +14,7 @@ class ContentGeneratorService {
     private let apiKey: String
     private let model: String
     private var cancellables = Set<AnyCancellable>()
+    private var conversationHistory: [ChatMessage] = []
 
     init(apiKey: String = "", model: String = "gpt-3.5-turbo-instruct") {
         self.apiKey = "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 "
@@ -22,8 +23,8 @@ class ContentGeneratorService {
 
     // Generate horoscope
     func generateHoroscope(for sign: String, period: HoroscopePeriod) -> AnyPublisher<String, Error> {
-       var prompt = period.periodPrompt(for: sign)
-       return generateContent(with: prompt.lowercased())
+        var prompt = period.periodPrompt(for: sign)
+        return generateContent(with: prompt.lowercased())
 
     }
 
@@ -40,25 +41,63 @@ class ContentGeneratorService {
         return generateContent(with: prompt)
     }
 
-    // Initiate AI chat
-    func initiateChat(with messages: [ChatMessage]) -> AnyPublisher<String, Error> {
-        let chatRequest = ChatRequest(model: "gpt-3.5-turbo", messages: messages)
-        return sendRequest(endpoint: "chat/completions", requestBody: chatRequest)
+    // Generate Numerology Meaning
+    func generateNumerologyMeaning(for number: Int, type: String) -> AnyPublisher<String, Error> {
+        let prompt = """
+            Provide a detailed meaning of Numerology Number \(number) as a \(type).
+            Explain personality traits, strengths, weaknesses, and life guidance.
+            Format it in a structured and insightful way.
+            """
+
+        return generateContent(with: prompt)
+    }
+
+    func chatWithAI(userInput: String, user: User) -> AnyPublisher<String, Error> {
+        let userMessage = ChatMessage(role: "user", content: userInput)
+        conversationHistory.append(userMessage)
+
+
+        // ✅ Ensure AI's first message is included only once
+        if conversationHistory.count == 1 {
+            conversationHistory.insert(ChatMessage(role: "assistant", content: "🔮 Hello! I'm your astrology and psychology assistant. Ask me anything!"), at: 0)
+        }
+
+        let messages: [ChatMessage] = [
+            ChatMessage(role: "system", content: """
+               You are an expert astrologer, psychologist, and numerologist.
+               Provide deep insights based on astrology, psychology, and numerology.
+
+               User Profile:
+               - Name: \(user.name)
+               - Birthdate: \(user.birthdate)
+               - Zodiac Sign: \(user.zodiacSign()?.rawValue ?? "")
+               - Gender: \(user.gender.rawValue)
+
+               Use this information in responses to make them more personal.
+               """)
+        ] + conversationHistory
+
+        let chatRequest = ChatRequest(model: model, messages: messages)
+
+        return sendRequest(endpoint: "chat/completions", requestBody: chatRequest) // ✅ FIXED ENDPOINT
             .tryMap { (response: ChatResponse) in
                 guard let reply = response.choices.first?.message.content else {
                     throw ServiceError.invalidResponse
                 }
+                let aiMessage = ChatMessage(role: "assistant", content: reply)
+                self.conversationHistory.append(aiMessage) // Save AI response
                 return reply
             }
             .eraseToAnyPublisher()
     }
+
 
     // Generate content based on prompt
     private func generateContent(with prompt: String) -> AnyPublisher<String, Error> {
         let completionRequest = CompletionRequest(
             model: model,
             prompt: prompt,
-            max_tokens: 150,
+            max_tokens: 200,
             temperature: 0.7
         )
         return sendRequest(endpoint: "completions", requestBody: completionRequest)
@@ -73,7 +112,7 @@ class ContentGeneratorService {
 
     // Generic function to send requests
     private func sendRequest<T: Codable, U: Codable>(endpoint: String, requestBody: T) -> AnyPublisher<U, Error> {
-        guard let url = URL(string: "https://api.openai.com/v1/completions") else {
+        guard let url = URL(string: "https://api.openai.com/v1/\(endpoint)") else {
             return Fail(error: ServiceError.invalidURL).eraseToAnyPublisher()
         }
 
@@ -90,7 +129,6 @@ class ContentGeneratorService {
 
         return URLSession.shared.dataTaskPublisher(for: request)
             .retry(2) // Retries the request twice upon failure
-
             .tryMap { data, response in
                 guard let httpResponse = response as? HTTPURLResponse else {
                     throw ServiceError.invalidResponse

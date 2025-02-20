@@ -10,6 +10,10 @@ import SwiftUI
 struct CustomBackButtonModifier: ViewModifier {
 
     @Environment(\.presentationMode) var presentationMode
+    private var isWithText: Bool
+    init(isWithText: Bool) {
+        self.isWithText = isWithText
+    }
 
     func body(content: Content) -> some View {
         content
@@ -19,8 +23,9 @@ struct CustomBackButtonModifier: ViewModifier {
             }) {
                 HStack {
                     Image(systemName: "chevron.left")
-                    Text("Back")
-
+                    if isWithText {
+                        Text("Back")
+                    }
                 }
             })
             .foregroundColor(.white)
@@ -28,8 +33,8 @@ struct CustomBackButtonModifier: ViewModifier {
 }
 
 extension View {
-    func customBackButton() -> some View {
-        self.modifier(CustomBackButtonModifier())
+    func customBackButton(isWithText: Bool = true) -> some View {
+        self.modifier(CustomBackButtonModifier(isWithText: isWithText))
     }
 }
 

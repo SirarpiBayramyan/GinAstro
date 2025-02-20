@@ -12,9 +12,10 @@ import Firebase
 struct GinAstroApp: App {
 
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @StateObject var authViewModel = AuthViewModel()
     var body: some Scene {
         WindowGroup {
-            AuthView()
+            AuthView(viewModel: authViewModel)
         }
     }
 }

@@ -8,73 +8,134 @@
 import SwiftUI
 
 struct AuthView: View {
-    @ObservedObject var model = AuthModel()
-
+    @ObservedObject var viewModel: AuthViewModel
+    
+    init(viewModel: AuthViewModel) {
+        self.viewModel = viewModel
+    }
+    
     @State private var email = ""
     @State private var name = ""
     @State private var password = ""
     @State private var birthdate = Date()
     @State private var gender: Gender = .female
-    @State private var isRegistering = false
+    @State private var isRegistering = false // Track registration/login toggle
+    @State private var errorMessage: String?
 
     var body: some View {
         NavigationStack {
-            if let cachedUser = UserDefaults.standard.cachedUser {
-                // If user is already authenticated, show MainView
-                MainMenuView(user: cachedUser)
+            if viewModel.currentUser != nil {
+                MainMenuView(authViewModel: viewModel)
             } else {
-                // Otherwise, show Auth UI
                 authContent
             }
         }
         .onAppear {
-            // Check if a user is stored in UserDefaults on app launch
-            model.intent?.checkAuthentication()
+            viewModel.checkAuthentication()
+        }
+        .onChange(of: viewModel.authState) { _, newValue in
+            if case .error(let message) = newValue {
+                errorMessage = "Error: \(message)"
+            } else {
+                errorMessage = nil
+            }
+        }
+        .onChange(of: isRegistering) { oldValue, newValue in
+            errorMessage = nil
         }
     }
-
+    
     @ViewBuilder
     private var authContent: some View {
         VStack {
-            TextField("Email", text: $email)
-                .autocapitalization(.none)
-                .padding()
-                .background(Color(.secondarySystemBackground))
-
-            SecureField("Password", text: $password)
-                .padding()
-                .background(Color(.secondarySystemBackground))
-
+            Spacer()
+            
+            Text(isRegistering ? "Create Account" : "Login")
+                .font(.largeTitle)
+                .bold()
+            
+            Spacer()
+            if isRegistering {
+                CustomTextField(text: $name, placeholder: "Name")
+            }
+            
+            CustomTextField(text: $email, placeholder: "Email")
+            
+            CustomTextField(text: $password, placeholder: "Password", isSecure: true)
+            
+            Group {
+                if isRegistering {
+                    VStack(spacing: 10) {
+                        DatePicker("Birthdate", selection: $birthdate, displayedComponents: .date)
+                            .datePickerStyle(.compact)
+                        
+                        RoundedRectangle(cornerRadius: 1).fill(Color.white)
+                            .frame(height: 1)
+                        // Gender Picker
+                        Picker("Gender", selection: $gender) {
+                            Text("Female").tag(Gender.female)
+                            Text("Male").tag(Gender.male)
+                            Text("Other").tag(Gender.other)
+                        }
+                        .pickerStyle(SegmentedPickerStyle())
+                    }
+                }
+            }
+            .padding()
+            .background(RoundedRectangle(cornerRadius: 10).fill(Color.white.opacity(0.3)))
+            
+            
             Button(action: {
-                model.intent?.login(email: email, password: password)
+                withAnimation {
+                    if isRegistering {
+                        viewModel.register(name: name, email: email, password: password, birthdate: birthdate, gender: gender)
+                    } else {
+                        viewModel.login(email: email, password: password)
+                    }
+                }
             }) {
-                Text("Login")
-                    .foregroundColor(.white)
+                Text(isRegistering ? "Sign Up" : "Login")
                     .padding()
                     .frame(maxWidth: .infinity)
-                    .background(Color.blue)
-                    .cornerRadius(8)
             }
+            .gaButton
             .padding(.top)
-
-            switch model.state {
+            
+            // Error & Loading State
+            switch viewModel.authState {
             case .loading:
-                ProgressView()
-                    .padding()
+                ProgressView().padding()
             case .error(let message):
-                Text("Error: \(message)")
-                    .foregroundColor(.red)
-                    .padding()
+                Group {
+                    if let message = errorMessage {
+                        Text(message)
+                            .foregroundColor(.red)
+                            .padding()
+                    } else {
+                        EmptyView()
+                    }
+
+                }
+
             default:
                 EmptyView()
             }
-
+            
+            // Toggle between login & registration
+            Button(action: {
+                isRegistering.toggle()
+            }) {
+                Text(isRegistering ? "Already have an account? Login" : "Don't have an account? Sign up")
+            }
+            .padding()
+            Spacer()
         }
+        .foregroundStyle(Color.white)
         .padding()
+        .custombackground
     }
 }
 
 #Preview {
-    AuthView()
+    AuthView(viewModel: AuthViewModel())
 }
-

@@ -8,46 +8,57 @@
 import SwiftUI
 
 struct MainMenuView: View {
-    let user: User // Authenticated user
-
+    
+    @ObservedObject var authViewModel: AuthViewModel
+    init(authViewModel: AuthViewModel) {
+        self.authViewModel = authViewModel
+    }
+    
     var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
                 // Welcome Message
-                Text("Welcome, \(user.name) ✨")
+                Text("Welcome, \(authViewModel.currentUser?.name ?? "") ✨")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
                     .padding(.top, 20)
                     .foregroundStyle(Color.white)
-
+                
                 // Menu Grid
                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
-
+                    
                     // Horoscope View
                     NavigationLink(destination: HoroscopeView()) {
-                        MenuItemView(icon: user.zodiacSign()?.signImageName ?? "" , title: "Horoscope")
+                        MenuItemView(icon: authViewModel.currentUser?.zodiacSign()?.signImageName ?? "" , title: "Horoscope")
                     }
-
+                    
                     // Dream Catcher View
                     NavigationLink(destination: DreamView()) {
                         MenuItemView(icon: "dreamcatcher", title: "Dream Catcher")
                     }
-
+                    
                     // Tarot View
                     NavigationLink(destination: TarotView()) {
-                        MenuItemView(icon: "book.fill", title: "Tarot Reading")
+                        MenuItemView(icon: "tarot-reading", title: "Tarot Reading")
                     }
-
+                    //Numerology view
+                    NavigationLink(destination: NumerologyView()) {
+                        MenuItemView(icon: "numerology", title: "Numerology")
+                    }
                     // Live Chat AI View
-                    NavigationLink(destination: LiveChatView()) {
-                        MenuItemView(icon: "message.fill", title: "Live Chat AI")
+                    NavigationLink(destination: ChatView(
+                        viewModel: ChatViewModel(
+                            user: authViewModel.currentUser
+                        )
+                    )) {
+                        MenuItemView(icon: "live-chat", title: "Live Chat AI")
                     }
                 }
                 .padding(.horizontal)
-
+                
                 Spacer()
-
+                
                 // Logout Button
                 Button(action: {
                     logout()
@@ -64,22 +75,17 @@ struct MainMenuView: View {
             .custombackground
         }
     }
-
+    
     // Logout Function
     private func logout() {
-        UserDefaults.standard.cachedUser = nil
-        AuthModel().state = .unauthenticated // Update Auth State
+        //        UserDefaults.standard.cachedUser = nil
+        //        UserDefaults.standard.removeObject(forKey: "cachedUser")
+        authViewModel.logout()
     }
 }
 
 #Preview {
     MainMenuView(
-        user: User(
-                id: "",
-                name: "aa",
-                email: "aa@gmail.ccom",
-                birthdate: .distantPast,
-                gender: .male
-        )
+        authViewModel: AuthViewModel()
     )
 }
