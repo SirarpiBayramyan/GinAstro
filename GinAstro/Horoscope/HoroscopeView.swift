@@ -92,7 +92,7 @@ struct HoroscopeView: View {
                             .background(
                                 Capsule() // Use Capsule for better fit
                                     .fill(selectedPeriod == period ? Color.blue : Color.gray)
-                                    .opacity(0.3)
+                                    .opacity(0.5)
                                     .frame(width: 75, height: 30) // Adjusted height
                             )
                     }
@@ -138,8 +138,7 @@ struct HoroscopeView: View {
                             .padding()
                             .frame(width: 95)
                             .frame(height: 70)
-                            .background(selectedSign == sign ? Color.blue : Color.gray)
-                            .opacity(0.3)
+                            .background(selectedSign == sign ? Color.blue.opacity(0.5) : Color.gray.opacity(0.5))
                             .foregroundColor(.white)
                             .cornerRadius(10)
                         }
