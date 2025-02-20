@@ -71,9 +71,13 @@ struct HoroscopeView: View {
             ScrollView {
                 Text(horoscope)
                     .font(.body)
+                    .fontWeight(.medium)
                     .multilineTextAlignment(.center)
                     .padding()
             }
+            .background(Color.gray.opacity(0.3))
+            .cornerRadius(12)
+
         case .failure(let error):
             Text("Failed to load horoscope: \(error.localizedDescription)")
                 .foregroundColor(.red)
