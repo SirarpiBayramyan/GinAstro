@@ -13,6 +13,7 @@ struct GinAstroApp: App {
 
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @StateObject var authViewModel = AuthViewModel()
+
     var body: some Scene {
         WindowGroup {
             AuthView(viewModel: authViewModel)

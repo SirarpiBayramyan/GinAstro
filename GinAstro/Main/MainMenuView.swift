@@ -17,6 +17,7 @@ struct MainMenuView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
+                // TODO: for each section add //love, family, general, health, carreer & money
                 // Welcome Message
                 Text("Welcome, \(authViewModel.currentUser?.name ?? "") ✨")
                     .font(.largeTitle)
@@ -24,39 +25,43 @@ struct MainMenuView: View {
                     .multilineTextAlignment(.center)
                     .padding(.top, 20)
                     .foregroundStyle(Color.white)
+                ScrollView {
+                    // Menu Grid
+                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
+                        // Horoscope View
+                        NavigationLink(destination: CategorySelectionView(destinationView: { selectedCategory in
+                            HoroscopeView(viewModel: HoroscopeViewModel(category: selectedCategory))
+                        }, title: "Horoscope")) {
+                            MenuItemView(icon: authViewModel.currentUser?.zodiacSign()?.signImageName ?? "", title: "Horoscope")
+                        }
+                        // Dream Catcher View
+                        NavigationLink(destination: DreamView()) {
+                            MenuItemView(icon: "dreamcatcher", title: "Dream Catcher")
+                        }
 
-                // Menu Grid
-                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
+                        // Tarot View
+                        NavigationLink(destination: CategorySelectionView(destinationView: { selectedCategory in
+                           TarotView(viewModel: TarotViewModel(category: selectedCategory))
+                        }, title: "Tarot Reading")) {
+                            MenuItemView(icon: "tarot-reading", title: "Tarot Reading")
+                        }
 
-                    // Horoscope View
-                    NavigationLink(destination: HoroscopeView()) {
-                        MenuItemView(icon: authViewModel.currentUser?.zodiacSign()?.signImageName ?? "" , title: "Horoscope")
-                    }
+                        //Numerology view
+                        NavigationLink(destination: NumerologyView()) {
+                            MenuItemView(icon: "numerology", title: "Numerology")
+                        }
+                        // Live Chat AI View
+                        NavigationLink(destination: ChatView(
+                            viewModel: ChatViewModel(
+                                user: authViewModel.currentUser
+                            )
+                        )) {
+                            MenuItemView(icon: "live-chat", title: "Live Chat")
+                        }
 
-                    // Dream Catcher View
-                    NavigationLink(destination: DreamView()) {
-                        MenuItemView(icon: "dreamcatcher", title: "Dream Catcher")
                     }
-
-                    // Tarot View
-                    NavigationLink(destination: TarotView()) {
-                        MenuItemView(icon: "tarot-reading", title: "Tarot Reading")
-                    }
-                    //Numerology view
-                    NavigationLink(destination: NumerologyView()) {
-                        MenuItemView(icon: "numerology", title: "Numerology")
-                    }
-                    // Live Chat AI View
-                    NavigationLink(destination: ChatView(
-                        viewModel: ChatViewModel(
-                            user: authViewModel.currentUser
-                        )
-                    )) {
-                        MenuItemView(icon: "live-chat", title: "Live Chat AI")
-                    }
+                    .padding(.horizontal)
                 }
-                .padding(.horizontal)
-
                 Spacer()
 
                 // Logout Button
@@ -83,6 +88,9 @@ struct MainMenuView: View {
 //                }
 //            }
         }
+        .onAppear{
+            GaAnalytics.lofScreen(name: "main_screen")
+        }
     }
 
     // Logout Function
@@ -96,3 +104,4 @@ struct MainMenuView: View {
         authViewModel: AuthViewModel()
     )
 }
+

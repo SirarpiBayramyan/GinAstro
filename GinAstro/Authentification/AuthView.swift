@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AuthView: View {
+
     @ObservedObject var viewModel: AuthViewModel
     
     init(viewModel: AuthViewModel) {
@@ -24,14 +25,15 @@ struct AuthView: View {
 
     var body: some View {
         NavigationStack {
-            if viewModel.currentUser != nil {
-                MainMenuView(authViewModel: viewModel)
+            if viewModel.authState == .loading {
+                FullScreenGifView()
             } else {
-                authContent
+                if viewModel.currentUser != nil {
+                    MainMenuView(authViewModel: viewModel)
+                } else {
+                    authContent
+                }
             }
-        }
-        .onAppear {
-            viewModel.checkAuthentication()
         }
         .onChange(of: viewModel.authState) { _, newValue in
             if case .error(let message) = newValue {

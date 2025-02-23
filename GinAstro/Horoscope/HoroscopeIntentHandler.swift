@@ -9,7 +9,7 @@ import Combine
 import Foundation
 
 protocol HoroscopeIntentHandler {
-    func loadHoroscope(for sign: ZodiacSign, period: HoroscopePeriod)
+    func loadHoroscope(for sign: ZodiacSign, period: HoroscopePeriod, category: ContentCategory)
 }
 
 class DefaultHoroscopeIntentHandler: HoroscopeIntentHandler {
@@ -21,9 +21,9 @@ class DefaultHoroscopeIntentHandler: HoroscopeIntentHandler {
         self.viewModel = viewModel
     }
     
-    func loadHoroscope(for sign: ZodiacSign, period: HoroscopePeriod) {
+    func loadHoroscope(for sign: ZodiacSign, period: HoroscopePeriod,  category: ContentCategory) {
         viewModel?.state = .loading
-        contentService.generateHoroscope(for: sign.rawValue, period: period)
+        contentService.generateHoroscope(for: sign.rawValue, period: period, category: category)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] completion in
                 switch completion {

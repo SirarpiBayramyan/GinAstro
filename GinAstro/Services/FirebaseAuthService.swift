@@ -8,6 +8,7 @@
 import Foundation
 import FirebaseAuth
 import FirebaseFirestore
+import FirebaseAnalytics
 import Combine
 
 class FirebaseAuthService {
@@ -140,5 +141,17 @@ class FirebaseAuthService {
             }
         }
         .eraseToAnyPublisher()
+    }
+}
+
+// firebase Analytics implementation
+struct GaAnalytics {
+
+    static func logAction(name: String, params: [String: Any]?) {
+        Analytics.logEvent(name, parameters: params)
+    }
+    
+    static func lofScreen(name: String) {
+        Analytics.logEvent(name, parameters: nil)
     }
 }

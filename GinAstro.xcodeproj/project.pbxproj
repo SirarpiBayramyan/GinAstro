@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		8D25E9342D6700AE00A6BCEC /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D25E9332D6700AE00A6BCEC /* CustomTextField.swift */; };
 		8D25E9362D670C2000A6BCEC /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D25E9352D670C2000A6BCEC /* ChatViewModel.swift */; };
+		8D25E9392D676FE000A6BCEC /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8D25E9382D676FE000A6BCEC /* FirebaseAnalytics */; };
+		8D25E9432D6A5AB600A6BCEC /* launch.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8D25E9422D6A5AB600A6BCEC /* launch.gif */; };
+		8D25E9452D6B320100A6BCEC /* FullScreenGifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D25E9442D6B320100A6BCEC /* FullScreenGifView.swift */; };
+		8D25E94B2D6B71EF00A6BCEC /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D25E94A2D6B71EF00A6BCEC /* extensions.swift */; };
+		8D25E94F2D6B798500A6BCEC /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D25E94E2D6B798500A6BCEC /* ImagePicker.swift */; };
+		8D25E9512D6B852000A6BCEC /* ContentCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D25E9502D6B852000A6BCEC /* ContentCategory.swift */; };
+		8D25E9532D6B85B600A6BCEC /* CategorySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D25E9522D6B85B600A6BCEC /* CategorySelectionView.swift */; };
 		8D4B873B2D60B38A00367AA6 /* GinAstroApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B873A2D60B38A00367AA6 /* GinAstroApp.swift */; };
 		8D4B873F2D60B38A00367AA6 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B873E2D60B38A00367AA6 /* Item.swift */; };
 		8D4B87412D60B38B00367AA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D4B87402D60B38B00367AA6 /* Assets.xcassets */; };
@@ -64,6 +71,12 @@
 /* Begin PBXFileReference section */
 		8D25E9332D6700AE00A6BCEC /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		8D25E9352D670C2000A6BCEC /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		8D25E9422D6A5AB600A6BCEC /* launch.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = launch.gif; path = ../../launch.gif; sourceTree = "<group>"; };
+		8D25E9442D6B320100A6BCEC /* FullScreenGifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenGifView.swift; sourceTree = "<group>"; };
+		8D25E94A2D6B71EF00A6BCEC /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		8D25E94E2D6B798500A6BCEC /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		8D25E9502D6B852000A6BCEC /* ContentCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCategory.swift; sourceTree = "<group>"; };
+		8D25E9522D6B85B600A6BCEC /* CategorySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionView.swift; sourceTree = "<group>"; };
 		8D4B87372D60B38A00367AA6 /* GinAstro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GinAstro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D4B873A2D60B38A00367AA6 /* GinAstroApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GinAstroApp.swift; sourceTree = "<group>"; };
 		8D4B873E2D60B38A00367AA6 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -111,6 +124,7 @@
 			files = (
 				8D4B87D82D648F6100367AA6 /* FirebaseDatabase in Frameworks */,
 				8D4B87DA2D648F7E00367AA6 /* FirebaseFirestore in Frameworks */,
+				8D25E9392D676FE000A6BCEC /* FirebaseAnalytics in Frameworks */,
 				8D4B87E52D64A84900367AA6 /* OpenAIKit in Frameworks */,
 				8D4B87D62D648F5800367AA6 /* FirebaseCore in Frameworks */,
 				8D4B87D42D648F5400367AA6 /* FirebaseAuth in Frameworks */,
@@ -132,6 +146,14 @@
 			children = (
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		8D25E9492D6B71CF00A6BCEC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8D25E94A2D6B71EF00A6BCEC /* extensions.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		8D4B872E2D60B38A00367AA6 = {
@@ -165,8 +187,12 @@
 				8D4B87BA2D648BD500367AA6 /* Main */,
 				8D4B87B52D648B7800367AA6 /* Services */,
 				8D4B873A2D60B38A00367AA6 /* GinAstroApp.swift */,
+				8D25E9442D6B320100A6BCEC /* FullScreenGifView.swift */,
 				8D4B87C52D648CCF00367AA6 /* Authentification */,
 				8D4B873E2D60B38A00367AA6 /* Item.swift */,
+				8D25E9502D6B852000A6BCEC /* ContentCategory.swift */,
+				8D25E9522D6B85B600A6BCEC /* CategorySelectionView.swift */,
+				8D25E9492D6B71CF00A6BCEC /* Helpers */,
 				8D4B87C62D648CE200367AA6 /* ZodiacSign.swift */,
 				8D4B87DE2D64A5A000367AA6 /* TarotV */,
 				8D4B87C32D648CAB00367AA6 /* User.swift */,
@@ -174,6 +200,7 @@
 				8D4B87EC2D64B04F00367AA6 /* UI */,
 				8D4B87C12D648C4300367AA6 /* GoogleService-Info.plist */,
 				8D4B87402D60B38B00367AA6 /* Assets.xcassets */,
+				8D25E9422D6A5AB600A6BCEC /* launch.gif */,
 				8D4B87422D60B38B00367AA6 /* Preview Content */,
 			);
 			path = GinAstro;
@@ -276,6 +303,7 @@
 			children = (
 				8D4B87EB2D64B04F00367AA6 /* BackButtonModifier.swift */,
 				8D4B87F62D64F9FC00367AA6 /* GAButtonStyle.swift */,
+				8D25E94E2D6B798500A6BCEC /* ImagePicker.swift */,
 				8D25E9332D6700AE00A6BCEC /* CustomTextField.swift */,
 				8D4B87EE2D64C4F700367AA6 /* CustomBackground.swift */,
 			);
@@ -324,6 +352,7 @@
 				8D4B87D72D648F6100367AA6 /* FirebaseDatabase */,
 				8D4B87D92D648F7E00367AA6 /* FirebaseFirestore */,
 				8D4B87E42D64A84900367AA6 /* OpenAIKit */,
+				8D25E9382D676FE000A6BCEC /* FirebaseAnalytics */,
 			);
 			productName = GinAstro;
 			productReference = 8D4B87372D60B38A00367AA6 /* GinAstro.app */;
@@ -397,6 +426,7 @@
 				8D4B87442D60B38B00367AA6 /* Preview Assets.xcassets in Resources */,
 				8D4B87412D60B38B00367AA6 /* Assets.xcassets in Resources */,
 				8D4B87C22D648C4300367AA6 /* GoogleService-Info.plist in Resources */,
+				8D25E9432D6A5AB600A6BCEC /* launch.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,7 +449,9 @@
 				8D4B87F72D64F9FC00367AA6 /* GAButtonStyle.swift in Sources */,
 				8D4B87F52D64DA0300367AA6 /* DreamView.swift in Sources */,
 				8D4B87E72D64A89C00367AA6 /* HoroscopeModel.swift in Sources */,
+				8D25E9532D6B85B600A6BCEC /* CategorySelectionView.swift in Sources */,
 				8D4B88072D66562600367AA6 /* NumerologyCard.swift in Sources */,
+				8D25E94F2D6B798500A6BCEC /* ImagePicker.swift in Sources */,
 				8D4B87B62D648B7800367AA6 /* FirebaseAuthService.swift in Sources */,
 				8D4B88052D66106A00367AA6 /* Date+extension.swift in Sources */,
 				8D4B87BB2D648BD500367AA6 /* MainMenuView.swift in Sources */,
@@ -432,9 +464,11 @@
 				8D4B87EA2D64AECC00367AA6 /* HoroscopeIntentHandler.swift in Sources */,
 				8D4B87F92D65A7F400367AA6 /* CardView.swift in Sources */,
 				8D4B88022D66084200367AA6 /* NumerologyCalculator.swift in Sources */,
+				8D25E9452D6B320100A6BCEC /* FullScreenGifView.swift in Sources */,
 				8D4B87B72D648B7800367AA6 /* OpenAITranslationService.swift in Sources */,
 				8D4B87CF2D648E2500367AA6 /* AuthModel.swift in Sources */,
 				8D25E9342D6700AE00A6BCEC /* CustomTextField.swift in Sources */,
+				8D25E94B2D6B71EF00A6BCEC /* extensions.swift in Sources */,
 				8D4B88092D66572800367AA6 /* ExpandableDateCalculator.swift in Sources */,
 				8D4B87C02D648BF200367AA6 /* HoroscopeViewModel.swift in Sources */,
 				8D4B87F32D64D1D500367AA6 /* DreamViewModel.swift in Sources */,
@@ -447,6 +481,7 @@
 				8D4B87EF2D64C4F800367AA6 /* CustomBackground.swift in Sources */,
 				8D25E9362D670C2000A6BCEC /* ChatViewModel.swift in Sources */,
 				8D4B87E02D64A5A900367AA6 /* TarotView.swift in Sources */,
+				8D25E9512D6B852000A6BCEC /* ContentCategory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -738,6 +773,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8D25E9382D676FE000A6BCEC /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8D4B87CD2D648E0F00367AA6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
 		8D4B87D32D648F5400367AA6 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8D4B87CD2D648E0F00367AA6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

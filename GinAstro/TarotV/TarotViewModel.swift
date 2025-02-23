@@ -18,6 +18,11 @@ class TarotViewModel: ObservableObject {
 
     private let contentService = ContentGeneratorService()
     private var cancellables = Set<AnyCancellable>()
+    var category: ContentCategory
+
+    init(category: ContentCategory) {
+        self.category = category
+    }
 
     func drawCard() {
         guard tapCount < 3 else { return }

@@ -16,14 +16,14 @@ class ContentGeneratorService {
     private var cancellables = Set<AnyCancellable>()
     private var conversationHistory: [ChatMessage] = []
 
-    init(apiKey: String = "", model: String = "gpt-3.5-turbo-instruct") {
-        self.apiKey = "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 "
+    init(model: String = "gpt-3.5-turbo-instruct") {
+        self.apiKey = "sk-proj-bxltm7fp-8m8gt5HdfIG7Ar51kj__\("PkMiDZyZMpJd_61pogulPWM2T-mnD-u1qL5rkRyLCdK2uT3BlbkFJtpe1cBY")\("IB4fuM7HbdXrgBci90")RAOna\("LrS8ny0yDdEUz5Un2t-laTQz5")-RhfXDzBD6xVbdhLRwA"
         self.model = model
     }
 
     // Generate horoscope
-    func generateHoroscope(for sign: String, period: HoroscopePeriod) -> AnyPublisher<String, Error> {
-        var prompt = period.periodPrompt(for: sign)
+    func generateHoroscope(for sign: String, period: HoroscopePeriod, category: ContentCategory) -> AnyPublisher<String, Error> {
+        let prompt = "\(category.categoryPrompt()) for \(sign) for the \(period.rawValue)."
         return generateContent(with: prompt.lowercased())
 
     }
@@ -185,3 +185,4 @@ struct ChatResponse: Codable {
     }
     let choices: [Choice]
 }
+

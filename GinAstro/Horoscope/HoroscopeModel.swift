@@ -24,7 +24,7 @@ enum HoroscopePeriod: String, CaseIterable {
           var prompt = ""
           switch self {
           case .daily:
-              prompt = "Provide a detailed horoscope for the \(sign) zodiac sign for today."
+              prompt = "Provide a horoscope for the \(sign) zodiac sign for today."
           case .weekly:
               prompt = "Provide a weekly horoscope for the \(sign) zodiac sign this week \(currentWeek) of \(currentYear)."
           case .monthly:

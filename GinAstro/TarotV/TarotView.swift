@@ -9,9 +9,14 @@ import SwiftUI
 
 struct TarotDeckView: View {
 
-    @StateObject private var viewModel = TarotViewModel()
+    @ObservedObject private var viewModel: TarotViewModel
     @State private var poppedCards: [String: Bool] = [:] // Track popped state for each card
     @State private var currentCard: TarotCard? = nil // Floating card when drawn
+
+    init(viewModel: TarotViewModel) {
+        self.viewModel = viewModel
+
+    }
 
     var body: some View {
         VStack {
@@ -48,8 +53,10 @@ struct TarotDeckView: View {
             }
             Spacer()
         }
+        .padding()
         .custombackground.opacity(0.9)
         .customBackButton()
+
     }
 
 
@@ -79,7 +86,6 @@ struct TarotDeckView: View {
                 }
             }
         }
-        .padding()
 
     }
 
@@ -166,13 +172,17 @@ struct TarotDeckView: View {
 
 struct TarotView: View {
 
-    @StateObject private var viewModel = TarotViewModel()
+    @StateObject private var viewModel: TarotViewModel
+    init(viewModel: TarotViewModel) {
+        self._viewModel = StateObject(wrappedValue: viewModel)
+    }
 
     var body: some View {
-        TarotDeckView()
+        TarotDeckView(viewModel: viewModel)
+            .toolbarImageTitle(viewModel.category.imageName)
     }
 }
 
 #Preview {
-    TarotView()
+    TarotView(viewModel: TarotViewModel(category: .family))
 }

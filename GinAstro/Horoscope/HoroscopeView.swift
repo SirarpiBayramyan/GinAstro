@@ -7,10 +7,15 @@
 import SwiftUI
 
 struct HoroscopeView: View {
+    
     @Namespace var namespace
-    @ObservedObject var viewModel = HoroscopeViewModel()
+    @StateObject var viewModel: HoroscopeViewModel
     @State private var selectedSign: ZodiacSign = .aries
     @State private var selectedPeriod: HoroscopePeriod = .daily
+
+    init(viewModel: HoroscopeViewModel) {
+        self._viewModel = StateObject(wrappedValue: viewModel)
+    }
 
     var body: some View {
         ZStack {
@@ -34,24 +39,26 @@ struct HoroscopeView: View {
 
                 periodContent
                 contentView
+                Spacer()
             }
         }
         .padding()
         .custombackground
         .customBackButton()
+        .toolbarImageTitle(viewModel.category.imageName)
         .onAppear {
             withAnimation {
-                viewModel.intentHandler.loadHoroscope(for: selectedSign, period: selectedPeriod)
+                viewModel.intentHandler.loadHoroscope(for: selectedSign, period: selectedPeriod, category: viewModel.category)
             }
         }
         .onChange(of: selectedSign) { _ ,newSign in
             withAnimation {
-                viewModel.intentHandler.loadHoroscope(for: newSign, period: selectedPeriod)
+                viewModel.intentHandler.loadHoroscope(for: newSign, period: selectedPeriod, category: viewModel.category)
             }
         }
         .onChange(of: selectedPeriod) { _ ,newPeriod in
             withAnimation {
-                viewModel.intentHandler.loadHoroscope(for: selectedSign, period: newPeriod)
+                viewModel.intentHandler.loadHoroscope(for: selectedSign, period: newPeriod, category: viewModel.category)
             }
         }
     }
@@ -160,5 +167,32 @@ struct HoroscopeView: View {
 
 
 #Preview {
-    HoroscopeView()
+    HoroscopeView(viewModel: HoroscopeViewModel(category: .family))
+}
+
+import SwiftUI
+
+struct ToolbarImageTitle: ViewModifier {
+    var imageName: String
+    var size: CGFloat = 40 // Default size
+
+    func body(content: Content) -> some View {
+        content
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Image(systemName: imageName)
+                        .resizable()
+                        .foregroundStyle(Color.white)
+                        .scaledToFit()
+                        .frame(width: size, height: size)
+                }
+            }
+    }
+}
+
+// Extension for easier usage
+extension View {
+    func toolbarImageTitle(_ imageName: String, size: CGFloat = 40) -> some View {
+        self.modifier(ToolbarImageTitle(imageName: imageName, size: size))
+    }
 }

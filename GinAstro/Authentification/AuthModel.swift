@@ -22,11 +22,16 @@ class AuthViewModel: ObservableObject {
     @Published var authState: AuthState = .idle
     @Published var currentUser: User?
 
+    init() {
+      checkAuthentication()
+    }
+
     private let authService = FirebaseAuthService()
     private var cancellables = Set<AnyCancellable>()
 
     // Check if user is logged in
     func checkAuthentication() {
+        self.authState = .loading
         authService.fetchCurrentUser()
             .sink(receiveCompletion: { _ in }, receiveValue: { user in
                 DispatchQueue.main.async {
