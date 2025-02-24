@@ -20,7 +20,7 @@ struct AuthView: View {
     @State private var password = ""
     @State private var birthdate = Date()
     @State private var gender: Gender = .female
-    @State private var isRegistering = false // Track registration/login toggle
+
     @State private var errorMessage: String?
 
     var body: some View {
@@ -28,7 +28,7 @@ struct AuthView: View {
             if viewModel.authState == .loading {
                 FullScreenGifView()
             } else {
-                if viewModel.currentUser != nil {
+                if viewModel.currentUser != nil && viewModel.authState != .unauthenticated {
                     MainMenuView(authViewModel: viewModel)
                 } else {
                     authContent
@@ -42,7 +42,7 @@ struct AuthView: View {
                 errorMessage = nil
             }
         }
-        .onChange(of: isRegistering) { oldValue, newValue in
+        .onChange(of: viewModel.isRegistering) { oldValue, newValue in
             errorMessage = nil
         }
     }
@@ -52,12 +52,12 @@ struct AuthView: View {
         VStack {
             Spacer()
             
-            Text(isRegistering ? "Create Account" : "Login")
+            Text(viewModel.isRegistering ? "Create Account" : "Login")
                 .font(.largeTitle)
                 .bold()
             
             Spacer()
-            if isRegistering {
+            if viewModel.isRegistering {
                 CustomTextField(text: $name, placeholder: "Name")
             }
             
@@ -66,7 +66,7 @@ struct AuthView: View {
             CustomTextField(text: $password, placeholder: "Password", isSecure: true)
             
             Group {
-                if isRegistering {
+                if viewModel.isRegistering {
                     VStack(spacing: 10) {
                         DatePicker("Birthdate", selection: $birthdate, displayedComponents: .date)
                             .datePickerStyle(.compact)
@@ -89,14 +89,14 @@ struct AuthView: View {
             
             Button(action: {
                 withAnimation {
-                    if isRegistering {
+                    if viewModel.isRegistering {
                         viewModel.register(name: name, email: email, password: password, birthdate: birthdate, gender: gender)
                     } else {
                         viewModel.login(email: email, password: password)
                     }
                 }
             }) {
-                Text(isRegistering ? "Sign Up" : "Login")
+                Text(viewModel.isRegistering ? "Sign Up" : "Login")
                     .padding()
                     .frame(maxWidth: .infinity)
             }
@@ -125,9 +125,9 @@ struct AuthView: View {
             
             // Toggle between login & registration
             Button(action: {
-                isRegistering.toggle()
+                viewModel.isRegistering.toggle()
             }) {
-                Text(isRegistering ? "Already have an account? Login" : "Don't have an account? Sign up")
+                Text(viewModel.isRegistering ? "Already have an account? Login" : "Don't have an account? Sign up")
             }
             .padding()
             Spacer()

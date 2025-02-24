@@ -12,10 +12,10 @@ import FirebaseAnalytics
 import Combine
 
 class FirebaseAuthService {
-
+    
     private let db = Firestore.firestore()
     private var cancellables = Set<AnyCancellable>()
-
+    
     /// Register a new user
     func registerUser(name: String, email: String, password: String, birthdate: Date, gender: Gender) -> AnyPublisher<User, Error> {
         Future { promise in
@@ -24,12 +24,12 @@ class FirebaseAuthService {
                     promise(.failure(error))
                     return
                 }
-
+                
                 guard let uid = authResult?.user.uid else {
                     promise(.failure(NSError(domain: "AuthError", code: 0, userInfo: nil)))
                     return
                 }
-
+                
                 let user = User(id: uid, name: name, email: email, birthdate: birthdate, gender: gender)
                 self.saveUserToFirestore(user: user)
                     .sink(receiveCompletion: { completion in
@@ -44,7 +44,7 @@ class FirebaseAuthService {
         }
         .eraseToAnyPublisher()
     }
-
+    
     /// Save user data to Firestore
     private func saveUserToFirestore(user: User) -> AnyPublisher<User, Error> {
         Future { promise in
@@ -63,7 +63,7 @@ class FirebaseAuthService {
         }
         .eraseToAnyPublisher()
     }
-
+    
     /// Login a user
     func loginUser(email: String, password: String) -> AnyPublisher<Void, Error> {
         Future { promise in
@@ -77,7 +77,7 @@ class FirebaseAuthService {
         }
         .eraseToAnyPublisher()
     }
-
+    
     /// Fetch current user from Firestore
     func fetchCurrentUser() -> AnyPublisher<User?, Error> {
         Future { promise in
@@ -85,21 +85,21 @@ class FirebaseAuthService {
                 promise(.success(nil))
                 return
             }
-
+            
             let uid = currentUser.uid
             self.db.collection("users").document(uid).getDocument { document, error in
                 if let error = error {
                     promise(.failure(error))
                     return
                 }
-
+                
                 if let data = document?.data(),
                    let name = data["name"] as? String,
                    let email = data["email"] as? String,
                    let birthdateTimestamp = data["birthdate"] as? Timestamp,
                    let genderRaw = data["gender"] as? String,
                    let gender = Gender(rawValue: genderRaw) {
-
+                    
                     let birthdate = birthdateTimestamp.dateValue()
                     let user = User(id: uid, name: name, email: email, birthdate: birthdate, gender: gender)
                     promise(.success(user))
@@ -110,7 +110,7 @@ class FirebaseAuthService {
         }
         .eraseToAnyPublisher()
     }
-
+    
     /// Logout
     func logout() -> AnyPublisher<Void, Error> {
         Future { promise in
@@ -123,7 +123,7 @@ class FirebaseAuthService {
         }
         .eraseToAnyPublisher()
     }
-
+    
     /// Update User Data in Firestore
     func updateUserData(user: User) -> AnyPublisher<Void, Error> {
         Future { promise in
@@ -142,16 +142,46 @@ class FirebaseAuthService {
         }
         .eraseToAnyPublisher()
     }
+    
+    // Delete user account
+    func deleteAccount() -> AnyPublisher<Void, Error> {
+        Future { promise in
+            guard let user = Auth.auth().currentUser else {
+                promise(.failure(NSError(domain: "AuthError", code: 0, userInfo: [NSLocalizedDescriptionKey: "User not logged in."])))
+                return
+            }
+            
+            let userId = user.uid
+            
+            // 1. Delete user data from Firestore
+            self.db.collection("users").document(userId).delete { firestoreError in
+                if let firestoreError = firestoreError {
+                    promise(.failure(firestoreError))
+                    return
+                }
+                
+                // 2. Delete user from Firebase Authentication
+                user.delete { authError in
+                    if let authError = authError {
+                        promise(.failure(authError))
+                    } else {
+                        promise(.success(()))
+                    }
+                }
+            }
+        }
+        .eraseToAnyPublisher()
+    }
 }
 
 // firebase Analytics implementation
 struct GaAnalytics {
-
+    
     static func logAction(name: String, params: [String: Any]?) {
         Analytics.logEvent(name, parameters: params)
     }
     
-    static func lofScreen(name: String) {
+    static func logScreen(name: String) {
         Analytics.logEvent(name, parameters: nil)
     }
 }

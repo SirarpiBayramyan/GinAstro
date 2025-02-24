@@ -20,8 +20,11 @@ struct CategorySelectionView<Destination: View>: View {
                     selectedCategory = category
                     navigate = true // ✅ Set navigation trigger
                 }) {
-                    Text(category.rawValue)
-                        .frame(maxWidth: .infinity)
+                    HStack {
+                        Text(category.rawValue)
+                        Image(systemName: category.imageName)
+                    }
+                    .frame(maxWidth: .infinity)
                 }
                 .gaButton
                 .customBackButton()

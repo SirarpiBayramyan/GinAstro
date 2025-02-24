@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 import FirebaseAuth
+import SwiftUI
 
 enum AuthState: Equatable {
     case idle
@@ -21,9 +22,9 @@ enum AuthState: Equatable {
 class AuthViewModel: ObservableObject {
     @Published var authState: AuthState = .idle
     @Published var currentUser: User?
-
+    @Published var isRegistering = false
     init() {
-      checkAuthentication()
+        checkAuthentication()
     }
 
     private let authService = FirebaseAuthService()
@@ -91,5 +92,24 @@ class AuthViewModel: ObservableObject {
                 }
             })
             .store(in: &cancellables)
+    }
+
+    func deleteAccount(completion: @escaping () -> Void) {
+        authService.deleteAccount()
+            .sink(receiveCompletion: { completion in
+                if case .failure(let error) = completion {
+                    self.authState = .error("can't be deleted") // not correct not authentication error
+                }
+            }, receiveValue: { [weak self] _ in
+                print("Account deleted successfully")
+                withAnimation {
+                    completion()
+                    self?.authState = .unauthenticated
+                    self?.isRegistering = false
+                }
+
+            })
+            .store(in: &cancellables)
+
     }
 }

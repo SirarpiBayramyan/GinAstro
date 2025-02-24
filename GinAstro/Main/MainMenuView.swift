@@ -10,8 +10,10 @@ import SwiftUI
 struct MainMenuView: View {
 
     @ObservedObject var authViewModel: AuthViewModel
+    @State var state: AuthState
     init(authViewModel: AuthViewModel) {
         self.authViewModel = authViewModel
+        state = authViewModel.authState
     }
 
     var body: some View {
@@ -41,7 +43,7 @@ struct MainMenuView: View {
 
                         // Tarot View
                         NavigationLink(destination: CategorySelectionView(destinationView: { selectedCategory in
-                           TarotView(viewModel: TarotViewModel(category: selectedCategory))
+                            TarotView(viewModel: TarotViewModel(category: selectedCategory))
                         }, title: "Tarot Reading")) {
                             MenuItemView(icon: "tarot-reading", title: "Tarot Reading")
                         }
@@ -63,40 +65,30 @@ struct MainMenuView: View {
                     .padding(.horizontal)
                 }
                 Spacer()
-
-                // Logout Button
-                Button(action: {
-                    logout()
-                }) {
-                    Text("Sign Out")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .frame(width: 200, height: 36)
-                        .background(Color.gray.opacity(0.5))
-                        .cornerRadius(10)
-                }
-                .padding(.bottom, 30)
             }
             .custombackground
-//            .toolbar {
-//                ToolbarItem(placement: .topBarTrailing) {
-//                    NavigationLink(destination: EmptyView()) {  // Change `SettingsView()` to your desired destination
-//                        Image(systemName: "gearshape.fill")
-//                            .font(.title2)
-//                            .foregroundColor(.white)
-//                    }
-//                }
-//            }
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    NavigationLink(
+                        destination: SettingsView(
+                            viewModel:
+                                SettingsViewModel(
+                                    authViewModel: authViewModel
+                                ), authState: $state
+                        )
+                    ) {  // Change `SettingsView()` to your desired destination
+                        Image(systemName: "gearshape.fill")
+                            .font(.title2)
+                            .foregroundColor(.white)
+                    }
+                }
+            }
         }
         .onAppear{
-            GaAnalytics.lofScreen(name: "main_screen")
+            GaAnalytics.logScreen(name: "main_screen")
         }
     }
 
-    // Logout Function
-    private func logout() {
-        authViewModel.logout()
-    }
 }
 
 #Preview {
