@@ -28,26 +28,32 @@ struct SettingsView: View {
                             Image(systemName: "person.crop.circle.fill")
                                 .resizable()
                                 .frame(width: 60, height: 60)
-                                .foregroundColor(.blue)
 
                             VStack(alignment: .leading) {
                                 Text(viewModel.user?.name ?? "")
                                     .font(.title2)
                                     .fontWeight(.bold)
+                                    .foregroundStyle(Color.gray)
 
                                 Text(viewModel.user?.email ?? "")
                                     .font(.subheadline)
-                                    .foregroundColor(.gray)
+                                    .foregroundStyle(Color(.lightGray))
+
+
                             }
                         }
                         .padding(.vertical, 5)
                     }
+                    .gaSection
+
                     // About Section
                     Section(header: Text("About")) {
                         NavigationLink(destination: PrivacyPolicyView()) {
                             Text("Privacy Policy")
                         }
+                        .gaSection
                     }
+
 
                     Section(header: Text("Account")) {
                         Button(action: {
@@ -55,21 +61,28 @@ struct SettingsView: View {
                         }) {
                             HStack {
                                 Image(systemName: "trash")
-                                    .foregroundColor(.red)
                                 Text("Delete Account")
-                                    .foregroundColor(.red)
                             }
+                            .foregroundStyle(Color.red)
                         }
+                        .gaSection
                     }
 
                     Section {
                         Text("Version: \(viewModel.version)")
                     }
+                    .gaSection
+
+
 
                 }
+                .scrollContentBackground(.hidden)
+                .background(Color.settingsBG)
+
+
             }
             .navigationTitle("Settings")
-
+            .customBackButton()
 
             // Logout Button
             Button(action: {
@@ -82,6 +95,7 @@ struct SettingsView: View {
             .gaButton
             .padding(.vertical, 30)
         }
+        .background(Color.settingsBG)
         .alert(isPresented: $showAlert) {
             Alert(
                 title: Text("Delete Account"),
@@ -97,5 +111,14 @@ struct SettingsView: View {
             )
         }
     }
+}
+
+#Preview {
+    @State var state: AuthState = .authenticated
+    return SettingsView(
+        viewModel: SettingsViewModel(
+            authViewModel: AuthViewModel()),
+        authState: $state
+    )
 }
 

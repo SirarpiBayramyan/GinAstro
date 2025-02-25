@@ -59,6 +59,7 @@
 		8D77BDD62D6C6E4300521AC1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D77BDD52D6C6E4300521AC1 /* SettingsView.swift */; };
 		8D77BDD82D6C6E6F00521AC1 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D77BDD72D6C6E6F00521AC1 /* SettingsViewModel.swift */; };
 		8D77BDDA2D6C705F00521AC1 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D77BDD92D6C705F00521AC1 /* PrivacyPolicyView.swift */; };
+		8D9E137E2D6DADE60060A894 /* gaSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9E137D2D6DADE60060A894 /* gaSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 		8D77BDD52D6C6E4300521AC1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		8D77BDD72D6C6E6F00521AC1 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		8D77BDD92D6C705F00521AC1 /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
+		8D9E137D2D6DADE60060A894 /* gaSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gaSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,6 +315,7 @@
 				8D4B87EB2D64B04F00367AA6 /* BackButtonModifier.swift */,
 				8D4B87F62D64F9FC00367AA6 /* GAButtonStyle.swift */,
 				8D25E94E2D6B798500A6BCEC /* ImagePicker.swift */,
+				8D9E137D2D6DADE60060A894 /* gaSection.swift */,
 				8D25E9332D6700AE00A6BCEC /* CustomTextField.swift */,
 				8D4B87EE2D64C4F700367AA6 /* CustomBackground.swift */,
 			);
@@ -480,6 +483,7 @@
 				8D4B87CF2D648E2500367AA6 /* AuthModel.swift in Sources */,
 				8D25E9342D6700AE00A6BCEC /* CustomTextField.swift in Sources */,
 				8D25E94B2D6B71EF00A6BCEC /* extensions.swift in Sources */,
+				8D9E137E2D6DADE60060A894 /* gaSection.swift in Sources */,
 				8D4B88092D66572800367AA6 /* ExpandableDateCalculator.swift in Sources */,
 				8D4B87C02D648BF200367AA6 /* HoroscopeViewModel.swift in Sources */,
 				8D4B87F32D64D1D500367AA6 /* DreamViewModel.swift in Sources */,
