@@ -159,13 +159,18 @@ struct ChatBubble: View {
 #Preview {
     ChatView(
         viewModel: ChatViewModel(
-            user: User(
-                id: "",
-                name: "jj",
-                email: "mkn@gmail.com",
-                birthdate: .now,
-                gender: .male
-            )
+            user: .previewUser
         )
+    )
+}
+
+
+extension User {
+    static let previewUser = User(
+        id: "",
+        name: "jj",
+        email: "mkn@gmail.com",
+        birthdate: .now,
+        gender: .male
     )
 }

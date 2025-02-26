@@ -7,14 +7,18 @@
 import SwiftUI
 
 struct HoroscopeView: View {
-    
+
     @Namespace var namespace
-    @StateObject var viewModel: HoroscopeViewModel
+    @ObservedObject var viewModel: HoroscopeViewModel
     @State private var selectedSign: ZodiacSign = .aries
     @State private var selectedPeriod: HoroscopePeriod = .daily
 
     init(viewModel: HoroscopeViewModel) {
-        self._viewModel = StateObject(wrappedValue: viewModel)
+        self.viewModel = viewModel
+        if let sign = viewModel.user?.zodiacSign() {
+            self.selectedSign = sign
+        }
+
     }
 
     var body: some View {
@@ -47,6 +51,9 @@ struct HoroscopeView: View {
         .customBackButton()
         .toolbarImageTitle(viewModel.category.imageName)
         .onAppear {
+            if let sign = viewModel.user?.zodiacSign() {
+                self.selectedSign = sign
+            }
             withAnimation {
                 viewModel.intentHandler.loadHoroscope(for: selectedSign, period: selectedPeriod, category: viewModel.category)
             }
@@ -158,7 +165,9 @@ struct HoroscopeView: View {
                 }
             }
             .onAppear {
-                scrollProxy.scrollTo(selectedSign, anchor: .center)
+                DispatchQueue.main.async {
+                    scrollProxy.scrollTo(selectedSign, anchor: .center)
+                }
             }
         }
     }
@@ -167,7 +176,7 @@ struct HoroscopeView: View {
 
 
 #Preview {
-    HoroscopeView(viewModel: HoroscopeViewModel(category: .family))
+    HoroscopeView(viewModel: HoroscopeViewModel(category: .family, user: .previewUser))
 }
 
 import SwiftUI

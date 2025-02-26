@@ -18,11 +18,13 @@ enum HoroscopeState {
 class HoroscopeViewModel: ObservableObject {
 
     @Published var state: HoroscopeState = .idle
+    var user: User?
     var cancellables = Set<AnyCancellable>()
     var category: ContentCategory
 
-    init(category: ContentCategory) {
+    init(category: ContentCategory, user: User?) {
         self.category = category
+        self.user = user
     }
 
     lazy var intentHandler: HoroscopeIntentHandler = {
@@ -30,6 +32,7 @@ class HoroscopeViewModel: ObservableObject {
     }()
 
     private let contentService =  ContentGeneratorService()
+
 
 }
 

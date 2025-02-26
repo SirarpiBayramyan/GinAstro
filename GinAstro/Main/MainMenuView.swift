@@ -11,6 +11,7 @@ struct MainMenuView: View {
 
     @ObservedObject var authViewModel: AuthViewModel
     @State var state: AuthState
+    
     init(authViewModel: AuthViewModel) {
         self.authViewModel = authViewModel
         state = authViewModel.authState
@@ -19,7 +20,7 @@ struct MainMenuView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
-                // TODO: for each section add //love, family, general, health, carreer & money
+
                 // Welcome Message
                 Text("Welcome, \(authViewModel.currentUser?.name ?? "") ✨")
                     .font(.largeTitle)
@@ -32,7 +33,12 @@ struct MainMenuView: View {
                     LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
                         // Horoscope View
                         NavigationLink(destination: CategorySelectionView(destinationView: { selectedCategory in
-                            HoroscopeView(viewModel: HoroscopeViewModel(category: selectedCategory))
+                            HoroscopeView(
+                                viewModel: HoroscopeViewModel(
+                                    category: selectedCategory,
+                                    user: authViewModel.currentUser
+                                )
+                            )
                         }, title: "Horoscope")) {
                             MenuItemView(icon: authViewModel.currentUser?.zodiacSign()?.signImageName ?? "", title: "Horoscope")
                         }
