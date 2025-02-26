@@ -51,26 +51,29 @@ struct AuthView: View {
     private var authContent: some View {
         VStack {
             Spacer()
-            
+
+
             Text(viewModel.isRegistering ? "Create Account" : "Login")
                 .font(.largeTitle)
                 .bold()
-            
+                .padding(.top, 50)
+
+
             Spacer()
             if viewModel.isRegistering {
                 CustomTextField(text: $name, placeholder: "Name")
             }
-            
+
             CustomTextField(text: $email, placeholder: "Email")
-            
+
             CustomTextField(text: $password, placeholder: "Password", isSecure: true)
-            
+
             Group {
                 if viewModel.isRegistering {
                     VStack(spacing: 10) {
                         DatePicker("Birthdate", selection: $birthdate, displayedComponents: .date)
                             .datePickerStyle(.compact)
-                        
+
                         RoundedRectangle(cornerRadius: 1).fill(Color.white)
                             .frame(height: 1)
                         // Gender Picker
@@ -85,8 +88,8 @@ struct AuthView: View {
             }
             .padding()
             .background(RoundedRectangle(cornerRadius: 10).fill(Color.white.opacity(0.3)))
-            
-            
+
+
             Button(action: {
                 withAnimation {
                     if viewModel.isRegistering {
@@ -102,7 +105,7 @@ struct AuthView: View {
             }
             .gaButton
             .padding(.top)
-            
+
             // Error & Loading State
             switch viewModel.authState {
             case .loading:
@@ -122,7 +125,7 @@ struct AuthView: View {
             default:
                 EmptyView()
             }
-            
+
             // Toggle between login & registration
             Button(action: {
                 viewModel.isRegistering.toggle()

@@ -33,11 +33,11 @@ struct SettingsView: View {
                                 Text(viewModel.user?.name ?? "")
                                     .font(.title2)
                                     .fontWeight(.bold)
-                                    .foregroundStyle(Color.gray)
+                                    .foregroundStyle(Color.settingsBG)
 
                                 Text(viewModel.user?.email ?? "")
                                     .font(.subheadline)
-                                    .foregroundStyle(Color(.lightGray))
+                                    .foregroundStyle(Color.white)
 
 
                             }
