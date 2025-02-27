@@ -83,15 +83,14 @@ class AuthViewModel: ObservableObject {
     }
 
     // Logout
-    func logout() {
+    func logout(completion: @escaping () -> Void) {
         authService.logout()
-            .sink(receiveCompletion: { _ in }, receiveValue: {
-                DispatchQueue.main.async {
-                    self.currentUser = nil
-                    self.authState = .unauthenticated // Explicitly set logout state
+            .sink(receiveCompletion: { _ in }, receiveValue: { [weak self] _ in
+                withAnimation {
+                    self?.unauthenticate(completion)
                 }
             })
-            .store(in: &cancellables)
+ .store(in: &cancellables)
     }
 
     func deleteAccount(completion: @escaping () -> Void) {
@@ -103,13 +102,19 @@ class AuthViewModel: ObservableObject {
             }, receiveValue: { [weak self] _ in
                 print("Account deleted successfully")
                 withAnimation {
-                    completion()
-                    self?.authState = .unauthenticated
-                    self?.isRegistering = false
+                    self?.unauthenticate(completion)
                 }
 
             })
             .store(in: &cancellables)
 
     }
+
+
+    private func unauthenticate(_ completion: @escaping () -> Void) {
+        completion()
+        authState = .unauthenticated
+        isRegistering = false
+    }
+
 }

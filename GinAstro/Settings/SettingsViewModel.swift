@@ -23,8 +23,8 @@ class SettingsViewModel: ObservableObject {
         self.authViewModel = authViewModel
     }
 
-    func logout() {
-        authViewModel.logout()
+    func logout(completion: @escaping () -> Void) {
+        authViewModel.logout(completion: completion)
     }
 
     func deleteAccount(completion: @escaping () -> Void) {

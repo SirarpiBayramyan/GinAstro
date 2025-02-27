@@ -86,7 +86,10 @@ struct SettingsView: View {
 
             // Logout Button
             Button(action: {
-                viewModel.logout()
+                viewModel.logout(completion: {
+                    presentationMode.wrappedValue.dismiss()
+                    authState = .unauthenticated
+                })
             }) {
                 Text("Sign Out")
                     .font(.headline)
