@@ -12,5 +12,6 @@ Explore your life path, destiny number, and personal year cycle.
 ### Astro-Psychology Chat –
 Engage with AI-powered insights for emotional understanding and relationship advice.
 ###Dream Analysis – Decode your dreams and uncover hidden meanings.
+.....
 
 
