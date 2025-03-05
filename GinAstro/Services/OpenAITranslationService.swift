@@ -17,7 +17,7 @@ class ContentGeneratorService {
     private var conversationHistory: [ChatMessage] = []
 
     init(model: String = "gpt-3.5-turbo-instruct") {
-        self.apiKey = "sk-proj-bxltm7fp-8m8gt5HdfIG7Ar51kj__\("PkMiDZyZMpJd_61pogulPWM2T-mnD-u1qL5rkRyLCdK2uT3BlbkFJtpe1cBY")\("IB4fuM7HbdXrgBci90")RAOna\("LrS8ny0yDdEUz5Un2t-laTQz5")-RhfXDzBD6xVbdhLRwA"
+        self.apiKey = "you api key"
         self.model = model
     }
 
